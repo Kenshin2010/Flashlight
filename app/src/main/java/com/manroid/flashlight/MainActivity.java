@@ -32,9 +32,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+        requestPermission();
+        initFlashLight();
 
+    }
+
+    private void initFlashLight(){
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager
                 .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -56,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    private void requestPermission(){
+        ActivityCompat.requestPermissions(MainActivity.this,
+                new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
     }
 
     @Override
