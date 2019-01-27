@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Flashlight</string>
+    <string name="permdesc_flashlight">Đèn pin siêu sáng</string>
+
+</resources>
